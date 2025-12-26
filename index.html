@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="wonder-garden">Wonder-Garden</h1>
+<p><img src="image-2.png" alt="alt text"></p>
+<blockquote>
+<h3 id="%E6%B2%B3%E5%8E%9F%E9%9B%BB%E5%AD%90%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E5%B0%82%E9%96%80%E5%AD%A6%E6%A0%A1-%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%82%BF%E3%83%BC%E7%A7%91">河原電子ビジネス専門学校 ゲームクリエイター科</h3>
+<h3 id="%E6%9E%97-%E5%BD%AA">林　彪</h3>
+<h3 id="github-url--httpsgithubcomhayashihyouwonder-garden">GitHub URL ： https://github.com/hayashihyou/Wonder-Garden</h3>
+</blockquote>
+<h1 id="%E7%9B%AE%E6%AC%A1">目次</h1>
+<ul>
+<li><a href="#%E4%BD%9C%E5%93%81%E6%A6%82%E8%A6%81">作品概要</a></li>
+<li><a href="#%E6%93%8D%E4%BD%9C%E8%AA%AC%E6%98%8E">操作説明</a></li>
+<li><a href="#%E3%82%B2%E3%83%BC%E3%83%A0%E8%AA%AC%E6%98%8E">ゲーム説明</a></li>
+<li><a href="#%E3%82%AE%E3%83%9F%E3%83%83%E3%82%AF%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">ギミックについて</a>
+<ul>
+<li><a href="#%E5%9C%9F%E7%AE%A1%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">土管について</a></li>
+<li><a href="#%E5%A4%A7%E7%A0%B2%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">大砲について</a></li>
+</ul>
+</li>
+<li><a href="#%E6%8A%80%E8%A1%93%E7%B4%B9%E4%BB%8B">技術紹介</a>
+<ul>
+<li><a href="#%E3%82%B9%E3%83%86%E3%83%BC%E3%83%88%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">ステートパターンについて</a></li>
+<li><a href="#%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%83%BC%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">マネージャークラスについて</a></li>
+<li><a href="#%E3%83%9C%E3%82%B9%E3%81%AEHP%E3%83%90%E3%83%BC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">ボスのHPバーについて</a></li>
+<li><a href="#%E3%83%9C%E3%82%B9%E6%88%A6%E3%81%AE%E6%BC%94%E5%87%BA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">ボス戦の演出について</a></li>
+<li><a href="#%E3%83%88%E3%82%A5%E3%83%BC%E3%83%B3%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">トゥーンシェーダーについて</a></li>
+</ul>
+</li>
+</ul>
+<br />
+<h1 id="%E4%BD%9C%E5%93%81%E6%A6%82%E8%A6%81">作品概要</h1>
+  <dl>
+    <dt>タイトル : WonderGarden</dt>
+    <dt>制作人数 : 1人</dt>
+    <dt>ゲームジャンル : 3Dアクションゲーム</dt>
+    <dt>プレイ人数 : 1人</dt>
+    <dt>使用言語 : C++,HLSL</dt>
+    <dt>開発環境 : 学内エンジン,Windows11</dt>  
+  </dl>
+<br />
+<h1 id="%E6%93%8D%E4%BD%9C%E8%AA%AC%E6%98%8E">操作説明</h1>
+<blockquote>
+<h3 id="dta%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%97dt"><dt>Aボタン：ジャンプ</dt></h3>
+<h3 id="dtb%E3%83%9C%E3%82%BF%E3%83%B3%E6%B1%BA%E5%AE%9A%E3%82%AD%E3%83%BC%E6%94%BB%E6%92%83%E3%83%91%E3%83%B3%E3%83%81dt"><dt>Bボタン：決定キー/攻撃(パンチ)</dt></h3>
+<h3 id="dtx%E3%83%9C%E3%82%BF%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5dt"><dt>Xボタン：ダッシュ</dt></h3>
+<h3 id="dtl%E3%82%B9%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E5%8D%81%E5%AD%97%E3%82%AD%E3%83%BC%E7%A7%BB%E5%8B%95dt"><dt>Lスティック,十字キー：移動</dt></h3>
+<h3 id="dtr%E3%82%B9%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%82%AB%E3%83%A1%E3%83%A9%E7%A7%BB%E5%8B%95dt"><dt>Rスティック：カメラ移動</dt></h3>
+<p><img src="Xbox.png" alt="alt text"></p>
+</blockquote>
+<h1 id="%E3%82%B2%E3%83%BC%E3%83%A0%E8%AA%AC%E6%98%8E">ゲーム説明</h1>
+<h3 id="%E6%95%B5%E3%82%92%E5%80%92%E3%81%97%E3%81%A4%E3%81%A4%E3%83%9C%E3%82%B9%E3%81%AE%E3%81%84%E3%82%8B%E5%A0%B4%E6%89%80%E3%81%BE%E3%81%A7%E5%90%91%E3%81%8B%E3%81%84%E3%83%9C%E3%82%B9%E3%82%92%E5%80%92%E3%81%9D%E3%81%86">敵を倒しつつボスのいる場所まで向かいボスを倒そう！！</h3>
+<p><img src="image.png" alt="alt text">
+<br /></p>
+<h1 id="%E3%82%AE%E3%83%9F%E3%83%83%E3%82%AF%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">ギミックについて</h1>
+<h3 id="%E4%BB%8A%E5%9B%9E2%E7%82%B9%E3%81%BB%E3%81%A9%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8%E3%82%AE%E3%83%9F%E3%83%83%E3%82%AF%E3%82%92%E7%94%A8%E6%84%8F%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F">今回2点ほどステージギミックを用意しました。</h3>
+<h3 id="%E3%83%BB%E5%9C%9F%E7%AE%A1">・土管</h3>
+<p><img src="スクリーンショット 2025-12-26 011613.png" alt="alt text"></p>
+<h3 id="%E3%83%BB%E5%A4%A7%E7%A0%B2">・大砲</h3>
+<p><img src="image-1.png" alt="alt text"></p>
+<h3 id="%E3%81%AE2%E7%82%B9%E3%81%A7%E3%81%99">の2点です。</h3>
+<h2 id="%E5%9C%9F%E7%AE%A1%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">土管について</h2>
+<blockquote>
+<h3 id="%E5%9C%9F%E7%AE%A1%E3%81%AE%E4%B8%AD%E3%81%AB%E5%88%A4%E5%AE%9A%E3%82%92%E4%BB%98%E3%81%91%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%8C%E5%9C%9F%E7%AE%A1%E3%81%AE%E4%B8%AD%E3%81%AB%E3%81%8F%E3%81%90%E3%81%A3%E3%81%9F%E9%9A%9B%E3%81%AB%E3%82%82%E3%81%86%E4%B8%80%E3%81%A4%E3%81%AE%E3%81%A4%E3%81%AA%E3%81%92%E3%81%9F%E5%9C%9F%E7%AE%A1%E3%81%AE%E6%96%B9%E3%81%AB%E7%A7%BB%E5%8B%95%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99">土管の中に判定を付けることでプレイヤーが土管の中にくぐった際にもう一つのつなげた土管の方に移動することができます。</h3>
+<p><img src="土管-1.gif" alt="alt text"></p>
+</blockquote>
+<h3 id="%E5%9C%9F%E7%AE%A1%E3%82%92%E3%81%8F%E3%81%90%E3%81%A3%E3%81%9F%E6%99%82%E3%81%AB%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%AE%E4%BD%8D%E7%BD%AE%E3%82%92%E5%A4%89%E6%9B%B4%E6%9B%B4%E6%96%B0%E3%81%97%E3%81%BE%E3%81%99%E3%81%8C%E3%81%93%E3%81%AE%E6%99%82%E3%82%AB%E3%83%A1%E3%83%A9%E3%82%92%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%AE%E4%BD%8D%E7%BD%AE%E3%81%AB%E5%90%88%E3%82%8F%E3%81%9B%E3%81%A6%E6%9B%B4%E6%96%B0%E3%81%97%E3%81%AA%E3%81%84%E3%81%A8%E3%81%84%E3%81%91%E3%81%BE%E3%81%9B%E3%82%93%E3%82%AB%E3%83%A1%E3%83%A9%E3%81%8C%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%AE%E4%BD%8D%E7%BD%AE%E3%82%92%E8%A6%8B%E5%A4%B1%E3%81%84%E7%94%BB%E9%9D%A2%E3%81%A7%E3%81%AF%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%AE%E7%A7%BB%E5%8B%95%E5%BE%8C%E3%81%AE%E3%82%AB%E3%83%A1%E3%83%A9%E3%81%8C%E5%8F%8D%E6%98%A0%E3%81%95%E3%82%8C%E3%81%A6%E3%81%AA%E3%81%84%E3%81%BE%E3%81%BE%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%99">土管をくぐった時にプレイヤーの位置を変更、更新しますがこの時カメラをプレイヤーの位置に合わせて更新しないといけません。カメラがプレイヤーの位置を見失い、画面ではプレイヤーの移動後のカメラが反映されてないままになります。</h3>
+<br />
+<h2 id="%E5%A4%A7%E7%A0%B2%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">大砲について</h2>
+<blockquote>
+<h3 id="%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E5%A4%A7%E7%A0%B2%E3%81%AB%E8%BF%91%E3%81%A5%E3%81%8F%E5%A4%A7%E7%A0%B2%E3%81%AE%E4%B8%AD%E3%81%AB%E5%85%A5%E3%82%8A%E8%A8%AD%E5%AE%9A%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E5%90%91%E3%81%8D%E3%81%A8%E5%88%9D%E9%80%9F%E3%81%AE%E5%8B%A2%E3%81%84%E3%82%92%E6%8C%81%E3%81%A3%E3%81%A6%E7%99%BA%E5%B0%84%E3%81%97%E9%87%8D%E5%8A%9B%E3%81%A7%E5%B0%91%E3%81%97%E3%81%9A%E3%81%A4%E5%8B%A2%E3%81%84%E3%82%92%E8%90%BD%E3%81%A8%E3%81%97%E3%81%A6%E3%81%84%E3%81%8F%E3%81%93%E3%81%A8%E3%81%A7%E6%94%BE%E7%89%A9%E7%B7%9A%E3%82%92%E6%8F%8F%E3%81%8F%E3%82%88%E3%81%86%E3%81%AA%E9%A3%9B%E3%81%B3%E6%96%B9%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F">プレイヤー大砲に近づく大砲の中に入り設定している向きと初速の勢いを持って発射し、重力で少しずつ勢いを落としていくことで放物線を描くような飛び方ができました。</h3>
+<p><img src="大砲.gif" alt="alt text"></p>
+</blockquote>
+<h3 id="%E5%A4%A7%E7%A0%B2%E3%81%AE%E5%91%A8%E3%82%8A%E3%81%AB%E5%BD%93%E3%81%9F%E3%82%8A%E5%88%A4%E5%AE%9A%E3%82%92%E4%BB%98%E3%81%91%E3%81%A6%E3%81%8A%E3%82%8A%E5%88%A4%E5%AE%9A%E3%81%AB%E8%A7%A6%E3%82%8C%E3%82%8B%E3%81%A8%E5%A4%A7%E7%A0%B2%E3%81%AE%E4%B8%AD%E3%81%AB%E5%85%A5%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E5%A4%A7%E7%A0%B2%E3%81%AE%E4%B8%AD%E3%81%AB%E5%85%A5%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E9%96%93%E3%81%AF%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%AB%E5%A4%A7%E7%A0%B2%E3%81%AB%E5%85%A5%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E7%8A%B6%E6%85%8B%E3%82%92%E8%A8%AD%E3%81%91%E7%A7%BB%E5%8B%95%E3%82%84%E6%94%BB%E6%92%83%E3%81%AE%E5%85%A5%E5%8A%9B%E3%82%92%E5%BC%BE%E3%81%8F%E6%A7%98%E3%81%AB%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99">大砲の周りに当たり判定を付けており、判定に触れると大砲の中に入るようになっています。大砲の中に入っている間はプレイヤーに大砲に入っている状態を設け移動や攻撃の入力を弾く様にしています。</h3>
+<br  />
+<h1 id="%E6%8A%80%E8%A1%93%E7%B4%B9%E4%BB%8B">技術紹介</h1>
+<h3 id="%E4%BB%8A%E5%9B%9E%E7%B4%B9%E4%BB%8B%E3%81%99%E3%82%8B%E6%8A%80%E8%A1%93%E3%81%AF5%E7%82%B9%E3%81%BB%E3%81%A9%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99">今回紹介する技術は5点ほどあります。</h3>
+<h3 id="%E3%83%BB%E3%82%B9%E3%83%86%E3%83%BC%E3%83%88%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">・ステートパターンについて</h3>
+<h3 id="%E3%83%BB%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%83%BC%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">・マネージャークラスについて</h3>
+<h3 id="%E3%83%BB%E3%83%9C%E3%82%B9%E3%81%AEhpui%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">・ボスのHPUIについて</h3>
+<h3 id="%E3%83%BB%E3%83%9C%E3%82%B9%E6%88%A6%E3%81%AE%E6%BC%94%E5%87%BA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">・ボス戦の演出について</h3>
+<h3 id="%E3%83%BB%E3%83%88%E3%82%A5%E3%83%BC%E3%83%B3%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">・トゥーンシェーダーについて</h3>
+<br />
+<h2 id="%E3%82%B9%E3%83%86%E3%83%BC%E3%83%88%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">ステートパターンについて</h2>
+<blockquote>
+<h3 id="%E4%BB%8A%E3%81%BE%E3%81%A7%E3%81%A7%E3%81%AFupdate%E9%96%A2%E6%95%B0%E3%81%AE%E4%B8%AD%E3%81%A7%E7%8A%B6%E6%85%8B%E9%81%B7%E7%A7%BB%E3%82%92%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8C%E6%96%B0%E3%81%97%E3%81%84%E7%8A%B6%E6%85%8B%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%97%E3%81%A6%E3%81%84%E3%81%8F%E5%BA%A6%E3%81%AB%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B2%90%E3%81%8C%E5%A2%97%E3%81%88%E3%81%A6%E3%81%97%E3%81%BE%E3%81%84%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AE%E5%8E%9F%E5%9B%A0%E3%81%AB%E3%81%AF%E3%81%A4%E3%81%AA%E3%81%8C%E3%81%A3%E3%81%A6%E3%81%97%E3%81%BE%E3%81%84%E3%81%BE%E3%81%97%E3%81%9F">今まででは、Update関数の中で状態遷移を行っていたのですが新しい状態を追加していく度に条件分岐が増えてしまいエラーの原因にはつながってしまいました。</h3>
+<p><img src="image-3.png" alt="alt text"></p>
+</blockquote>
+<blockquote>
+<h3 id="%E3%82%B9%E3%83%86%E3%83%BC%E3%83%88%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E5%AE%9F%E8%A3%85%E3%81%97%E3%81%9F%E3%81%93%E3%81%A8%E3%81%A7%E6%96%B0%E3%81%97%E3%81%8F%E3%82%B9%E3%83%86%E3%83%BC%E3%83%88%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E7%94%A8%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E7%94%A8%E6%84%8F%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7%E7%8A%B6%E6%85%8B%E9%81%B7%E7%A7%BB%E6%99%82%E3%81%AE%E5%87%A6%E7%90%86%E5%88%86%E3%81%8C%E6%9B%B8%E3%81%8D%E3%82%84%E3%81%99%E3%81%8F%E3%81%AA%E3%82%8A%E6%96%B0%E3%81%97%E3%81%84%E6%9D%A1%E4%BB%B6%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%97%E3%81%9F%E3%81%84%E6%99%82%E3%81%AF%E6%96%B0%E3%81%97%E3%81%84%E3%82%AF%E3%83%A9%E3%82%B9%E5%90%8D%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B%E3%81%A0%E3%81%91%E3%81%A7%E8%89%AF%E3%81%84%E3%81%AE%E3%81%A7%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E4%BF%9D%E5%AE%88%E6%80%A7%E3%82%84%E7%8A%B6%E6%85%8B%E9%81%B7%E7%A7%BB%E6%99%82%E3%81%AE%E3%83%90%E3%82%B0%E3%82%92%E6%8A%91%E5%88%B6%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F">ステートパターンを実装したことで新しくステートパターン用のクラスを用意することで状態遷移時の処理分が書きやすくなり、新しい条件を追加したい時は新しいクラス名を追加するだけで良いので、コードの保守性や状態遷移時のバグを抑制できました。</h3>
+<p><img src="image-4.png" alt="alt text">
+<br /></p>
+</blockquote>
+<h2 id="%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%83%BC%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">マネージャークラスについて</h2>
+<blockquote>
+<h3 id="%E6%94%BB%E6%92%83%E5%88%A4%E5%AE%9A%E3%82%92%E7%AE%A1%E7%90%86%E3%81%99%E3%82%8B%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%83%BC%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%A8%E6%95%B5%E3%81%AF%E5%85%B1%E9%80%9A%E3%81%AE%E5%BD%93%E3%81%9F%E3%82%8B%E5%88%A4%E5%AE%9A%E3%82%92%E6%8C%81%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F%E7%82%BA%E6%95%B5%E5%90%8C%E5%A3%AB%E3%81%AE%E6%94%BB%E6%92%83%E3%81%A7%E3%82%84%E3%82%89%E3%82%8C%E3%81%A6%E3%81%84%E3%81%BE%E3%81%97%E3%81%9F%E3%81%9D%E3%81%93%E3%81%A7%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%83%BC%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E5%AE%9F%E8%A3%85%E3%81%97%E3%81%9F%E3%81%93%E3%81%A8%E3%81%A7%E6%94%BB%E6%92%83%E5%88%A4%E5%AE%9A%E6%99%82%E3%81%AB%E8%AA%B0%E3%81%8C%E6%94%BB%E6%92%83%E3%81%97%E3%81%9F%E3%81%8B%E3%82%92%E3%82%8F%E3%81%8B%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%82%88%E3%81%A3%E3%81%A6%E6%95%B5%E5%90%8C%E5%A3%AB%E3%81%AE%E5%BD%93%E3%81%9F%E3%82%8A%E5%88%A4%E5%AE%9A%E3%81%A7%E3%82%84%E3%82%89%E3%82%8C%E3%82%8B%E3%81%93%E3%81%A8%E3%82%92%E3%81%AA%E3%81%8F%E3%81%99%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F">攻撃判定を管理するマネージャークラスを作りました。プレイヤーと敵は共通の当たる判定を持っていた為、敵同士の攻撃でやられていました。そこで、マネージャークラスを実装したことで攻撃判定時に”誰が”攻撃したかをわかるようにしました。よって、敵同士の当たり判定でやられることをなくすことができました。</h3>
+<p><img src="image-5.png" alt="alt text">
+<br /></p>
+</blockquote>
+<h2 id="%E3%83%9C%E3%82%B9%E3%81%AEhpui%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">ボスのHPUIについて</h2>
+<blockquote>
+<h3 id="hp%E3%83%90%E3%83%BC%E3%81%AF2%E7%A8%AE%E9%A1%9E%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%E7%8F%BE%E5%9C%A8hp%E3%82%92%E7%A4%BA%E3%81%99%E7%B7%91%E3%81%AE%E3%83%90%E3%83%BC%E3%81%A8%E7%8F%BE%E5%9C%A8hp%E3%81%8C%E6%B8%9B%E3%81%A3%E3%81%9F%E5%88%86%E3%82%92%E8%BF%BD%E5%BE%93%E3%81%97%E3%81%A6%E6%B8%9B%E3%82%89%E3%81%99%E8%B5%A4%E3%81%AE%E3%83%90%E3%83%BC%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99hp%E3%81%8C%E6%B8%9B%E5%B0%91%E6%99%82%E7%B7%91%E3%81%AE%E3%83%90%E3%83%BC%E3%81%AF%E5%8D%B3%E6%99%82%E3%81%AB%E6%B6%88%E3%81%88%E3%81%BE%E3%81%99%E3%81%8C%E8%B5%A4%E3%81%AE%E3%83%90%E3%83%BC%E3%81%8C%E6%B8%9B%E3%81%A3%E3%81%9F%E5%88%86%E3%81%AEhp%E3%82%92%E8%BF%BD%E5%BE%93%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7%E3%83%80%E3%83%A1%E3%83%BC%E3%82%B8%E3%81%AE%E4%BD%99%E9%9F%BB%E3%81%A8%E6%89%8B%E5%BF%9C%E3%81%88%E3%82%92%E6%84%9F%E3%81%98%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%97%E3%81%A6%E3%82%AF%E3%82%AA%E3%83%AA%E3%83%86%E3%82%A3%E3%82%A2%E3%83%83%E3%83%97%E3%81%AB%E3%82%82%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F">HPバーは2種類作りました。現在HPを示す緑のバーと現在HPが減った分を追従して減らす赤のバーがあります。HPが減少時、緑のバーは即時に消えますが赤のバーが減った分のHPを追従することでダメージの余韻と手応えを感じるようにして、クオリティアップにもなりました。</h3>
+</blockquote>
+<p><img src="HPバー.gif" alt="alt text">
+<br /></p>
+<h2 id="%E3%83%9C%E3%82%B9%E6%88%A6%E3%81%AE%E6%BC%94%E5%87%BA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">ボス戦の演出について</h2>
+<blockquote>
+<h3 id="%E3%83%9C%E3%82%B9%E6%88%A6%E3%81%AB%E5%85%A5%E3%81%A3%E3%81%9F%E6%99%82%E3%81%AB%E6%BC%94%E5%87%BA%E3%81%8C%E3%81%AA%E3%81%84%E3%81%A8%E3%83%9C%E3%82%B9%E6%88%A6%E3%81%AA%E3%81%AE%E3%81%8B%E4%BC%9D%E3%82%8F%E3%82%8A%E3%81%A5%E3%82%89%E3%81%84%E3%81%A8%E6%80%9D%E3%81%84%E5%AE%9F%E8%A3%85%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E9%BB%92%E5%B8%AF%E3%81%A8%E3%83%9C%E3%82%B9%E3%81%AE%E3%83%86%E3%82%AF%E3%82%B9%E3%83%81%E3%83%A3%E3%82%92%E7%94%A8%E6%84%8F%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7%E8%BF%AB%E5%8A%9B%E3%81%A8%E6%B2%A1%E5%85%A5%E6%84%9F%E3%82%92%E9%AB%98%E3%82%81%E3%81%BE%E3%81%97%E3%81%9F%E7%B7%9A%E5%BD%A2%E8%A3%9C%E9%96%93%E3%82%92%E7%94%A8%E3%81%84%E3%81%A6%E4%B8%80%E5%AE%9A%E3%81%AE%E6%95%B0%E5%80%A4%E3%81%A7%E9%BB%92%E5%B8%AF%E3%82%84%E3%83%86%E3%82%AF%E3%82%B9%E3%83%81%E3%83%A3%E3%82%92%E7%82%B9%E6%BB%85%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7%E3%83%9C%E3%82%B9%E6%88%A6%E5%89%8D%E3%81%AE%E3%83%A0%E3%83%BC%E3%83%93%E3%83%BC%E6%84%9F%E3%82%92%E5%87%BA%E3%81%99%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F">ボス戦に入った時に演出がないとボス戦なのか伝わりづらいと思い実装しました。黒帯とボスのテクスチャを用意することで迫力と没入感を高めました。線形補間を用いて一定の数値で黒帯やテクスチャを点滅することでボス戦前のムービー感を出すことができました。</h3>
+<p><img src="ボスの演出.gif" alt="alt text">
+<br /></p>
+</blockquote>
+<h2 id="%E3%83%88%E3%82%A5%E3%83%BC%E3%83%B3%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">トゥーンシェーダーについて</h2>
+<h3 id="%E5%BD%B1%E3%81%8C%E3%83%91%E3%82%AD%E3%81%A3%E3%81%A8%E3%81%97%E3%81%A6%E3%81%84%E3%81%A6%E5%85%89%E3%81%AE%E5%BD%93%E3%81%9F%E3%82%8A%E6%96%B9%E6%AC%A1%E7%AC%AC%E3%81%A7%E8%89%B2%E3%81%8C%E3%81%AF%E3%81%A3%E3%81%8D%E3%82%8A%E3%81%A8%E5%A4%89%E3%82%8F%E3%82%8A%E3%82%A2%E3%83%8B%E3%83%A1%E8%AA%BF%E3%81%AB%E8%A6%8B%E3%81%9B%E3%81%9F%E3%81%84%E7%82%BA%E3%83%88%E3%82%A5%E3%83%BC%E3%83%B3%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC%E3%82%92%E5%AE%9F%E8%A3%85%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F">影がパキっとしていて、光の当たり方次第で色がはっきりと変わりアニメ調に見せたい為、トゥーンシェーダーを実装しました。</h3>
+<blockquote>
+<h3 id="%E3%83%88%E3%82%A5%E3%83%BC%E3%83%B3%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC%E5%85%A5%E3%82%8C%E3%82%8B%E5%89%8D">トゥーンシェーダー入れる前</h3>
+<p><img src="スクリーンショット 2025-12-26 093902-1.png" alt="alt text"></p>
+</blockquote>
+<blockquote>
+<h3 id="%E3%83%88%E3%82%A5%E3%83%BC%E3%83%B3%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC%E3%82%92%E5%85%A5%E3%82%8C%E3%81%9F%E5%BE%8C">トゥーンシェーダーを入れた後</h3>
+<p><img src="スクリーンショット 2025-12-26 093800-1.png" alt="alt text"></p>
+</blockquote>
+<h3 id="%E5%B0%91%E3%81%97%E3%82%8F%E3%81%8B%E3%82%8A%E3%81%A5%E3%82%89%E3%81%84%E3%81%A7%E3%81%99%E3%81%8C%E8%B5%A4%E3%81%8F%E4%B8%B8%E3%81%A7%E5%9B%B2%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%AE%E5%B8%BD%E5%AD%90%E3%81%AE%E5%BD%B1%E3%81%8C%E3%81%8F%E3%81%A3%E3%81%8D%E3%82%8A%E5%85%A5%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%81%AE%E3%81%8C%E9%81%95%E3%81%84%E3%81%A8%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99">少しわかりづらいですが赤く丸で囲っているプレイヤーの帽子の影がくっきり入っているのが違いとなっています。</h3>
+
+</body>
+</html>
