@@ -5,8 +5,8 @@
 > ### 河原電子ビジネス専門学校 ゲームクリエイター科
 > ### 林　彪
 >
-> ### GitHub URL ： https://github.com/hayashihyou/Wonder-Garden
-> ### Youtube URL： https://youtu.be/CXDksX2rB2s
+> ### GitHub URL ： <a href="https://github.com/hayashihyou/Wonder-Garden/" target="_blank">https://github.com/hayashihyou/Wonder-Garden</a>
+> ### Youtube URL： <a href="https://youtu.be/CXDksX2rB2s" target="_blank">https://youtu.be/CXDksX2rB2s</a>
 
 
 # 目次
