@@ -1,0 +1,102 @@
+/* 画面全体 */
+body {
+  /* 背景色（青空のベース） */
+  background-color: #4facfe;
+  
+  /* ★ここが新しい魔法のコード！★
+     1つのSVG画像の中に、大きさや位置が違う「4つの雲」をまとめて定義しています。
+     これを並べることで、自然でバラバラな配置に見えるようになります。
+  */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='300' viewBox='0 0 500 300'%3E%3C!-- 雲1（左上・少し小さい） --%3E%3Cpath fill='rgba(255,255,255,0.6)' d='M25,45 Q10,45 10,35 Q10,20 25,20 Q30,10 45,10 Q60,10 65,20 Q80,15 85,30 Q95,30 95,45 Q95,55 80,55 L25,55 Z' transform='translate(30, 40) scale(0.8)'/%3E%3C!-- 雲2（中央右・標準サイズ） --%3E%3Cpath fill='rgba(255,255,255,0.6)' d='M25,45 Q10,45 10,35 Q10,20 25,20 Q30,10 45,10 Q60,10 65,20 Q80,15 85,30 Q95,30 95,45 Q95,55 80,55 L25,55 Z' transform='translate(280, 120)'/%3E%3C!-- 雲3（右上・少し大きい） --%3E%3Cpath fill='rgba(255,255,255,0.6)' d='M25,45 Q10,45 10,35 Q10,20 25,20 Q30,10 45,10 Q60,10 65,20 Q80,15 85,30 Q95,30 95,45 Q95,55 80,55 L25,55 Z' transform='translate(380, 20) scale(1.2)'/%3E%3C!-- 雲4（左下・横長） --%3E%3Cpath fill='rgba(255,255,255,0.6)' d='M25,45 Q10,45 10,35 Q10,20 25,20 Q30,10 45,10 Q60,10 65,20 Q80,15 85,30 Q95,30 95,45 Q95,55 80,55 L25,55 Z' transform='translate(80, 200) scale(0.9, 0.7)'/%3E%3C/svg%3E"),
+                    linear-gradient(to bottom, #1e64fa 0%, #64b4ff 100%);
+
+  /* 雲のパターン全体のサイズ（この範囲で雲が繰り返されます） */
+  background-size: 500px 300px, 100% 100%;
+  
+  /* 位置は標準に戻します */
+  background-position: 0 0, 0 0;
+  
+  /* 繰り返し設定 */
+  background-repeat: repeat;
+
+  /* 背景を固定 */
+  background-attachment: fixed;
+  
+  margin: 0;
+}
+
+/* 中央の黒い帯（ここは変更なしでOK） */
+.main-column {
+  background-color: rgba(0, 20, 60, 0.85); /* ほんのり透ける濃い紺色 */
+  
+  /* ガラスっぽい質感 */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* 枠線をうっすら白くして高級感を出す */
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  
+  color: #ffffff;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 8rem;
+  box-sizing: border-box;
+  line-height: 3.0;
+
+  /* 画面の上下に隙間を作って浮かせる */
+  margin-top: 50px;
+  margin-bottom: 50px;
+  
+  /* 角を丸くする */
+  border-radius: 20px;
+  
+  /* min-heightを変更（上下に隙間ができた分、少し高さを調整） */
+  min-height: calc(100vh - 100px);
+}
+
+/* マークダウンの引用部分（> で書かれた場所）のデザイン修正 */
+.main-column blockquote {
+  /* 背景を透明にする（これでネイビーの箱の色が透けます） */
+  background-color: transparent !important;
+  
+  /* デフォルトの枠線（左側の太い線など）を消す */
+  border: none !important;
+  
+  /* 文字色を強制的に白にする */
+  color: #ffffff !important;
+  
+  /* 余計な余白のリセット（お好みで調整してください） */
+  margin: 20px 0;
+  padding: 0 10px;
+}
+
+/* ついでに、中にある見出し（###）の余白も少し整えると綺麗になります */
+.main-column blockquote h3 {
+  margin-top: 0;
+  background-color: transparent; /* 念のためここも透明に */
+}
+
+/* リンク（URLなど）のデザイン変更 */
+.main-column a {
+  /* ロゴの「Wonder」のような明るい黄色に変更 */
+  color: #ffeb3b; 
+  
+  /* リンクだとわかりやすく下線をつける（不要なら none にしてください） */
+  text-decoration: underline;
+  
+  /* 少し太字にして読みやすくする */
+  font-weight: bold;
+}
+
+/* マウスを乗せた時の動き */
+.main-column a:hover {
+  /* マウスが乗ったら白く光る */
+  color: #ffffff;
+  
+  /* ふわっと色がかわるアニメーション */
+  transition: color 0.3s;
+}
+
