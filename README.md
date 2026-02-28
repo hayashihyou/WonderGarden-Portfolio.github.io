@@ -16,6 +16,8 @@
 
 > ### GitHub URL ： <a href="https://github.com/hayashihyou/Wonder-Garden/" target="_blank">https://github.com/hayashihyou/Wonder-Garden</a>
 > ### Youtube URL： <a href="https://youtu.be/OhVF1sdBHbQ" target="_blank">https://youtu.be/OhVF1sdBHbQ</a>
+> ### 　↓　作品ROMはこちら！
+> ### URL：<a href="https://drive.google.com/file/d/1xr_HRzWj9Lcxh623FKFVSbTITD9kItl5/view?usp=sharing" target="_blank">https://drive.google.com/file/d/1xr_HRzWj9Lcxh623FKFVSbTITD9kItl5/view?usp=sharing</a> 
 
 <br />
 
