@@ -77,6 +77,7 @@
 > ### 土管の中に判定を付けることでプレイヤーが土管の中にくぐった際に
 > ### もう一つのつなげた土管の方に移動することができます。
 >![alt text](material/土管.gif)
+### ▶ [GIFを見る](https://github.com/hayashihyou/WonderGarden-Portfolio.github.io/blob/main/material/%E5%9C%9F%E7%AE%A1.gif)
 
 ### 土管をくぐった時にプレイヤーの位置を変更、更新しますが
 ### この時カメラをプレイヤーの位置に合わせて更新しないといけません。
@@ -88,6 +89,7 @@
 >### プレイヤー大砲に近づく大砲の中に入り設定している向きと初速の勢いを持って発射し、
 >### 重力で少しずつ勢いを落としていくことで放物線を描くような飛び方ができました。
 >![alt text](material/大砲.gif)
+### ▶ [GIFを見る](https://github.com/hayashihyou/WonderGarden-Portfolio.github.io/blob/main/material/%E5%A4%A7%E7%A0%B2.gif)
 
 ### 大砲の周りに当たり判定を付けており、判定に触れると大砲の中に入るようになっています。
 ### 大砲の中に入っている間はプレイヤーに大砲に入っている状態を設け
@@ -136,6 +138,7 @@
 >### HPが減少時、緑のバーは即時に消えますが赤のバーが減った分のHPを追従することで
 >### ダメージの余韻と手応えを感じるようにして、クオリティアップにもなりました。
 ![alt text](material/ボスHP.gif)
+### ▶ [GIFを見る](https://github.com/hayashihyou/WonderGarden-Portfolio.github.io/blob/main/material/%E3%83%9C%E3%82%B9HP.gif)
 
 <br />
 
@@ -145,6 +148,7 @@
 >### 線形補間を用いて一定の数値で黒帯やテクスチャを点滅することで
 >### ボス戦前のムービー感を出すことができました。
 >![alt text](material/ボス戦UI.gif)
+### ▶ [GIFを見る](https://github.com/hayashihyou/WonderGarden-Portfolio.github.io/blob/main/material/%E3%83%9C%E3%82%B9%E6%88%A6UI.gif)
 
 <br />
 
